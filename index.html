@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scottish Fishing Bros | Official Website</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Variables for easy color changes */
+        :root {
+            --primary-blue: #005eb8; /* Scottish Saltire Blue */
+            --dark-blue: #003a70;
+            --accent-gold: #ffb81c;
+            --light-bg: #eef3f7;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(rgba(0, 58, 112, 0.85), rgba(0, 94, 184, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Call to Action Button */
+        .btn-youtube {
+            display: inline-block;
+            background-color: #ff0000; /* YouTube Red */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-youtube:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Layouts */
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--dark-blue);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* What We Do Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Links Section */
+        .links-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .links-list li {
+            margin-bottom: 15px;
+        }
+
+        .links-list a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .links-list a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header p { font-size: 1.1rem; }
+            section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Scottish Fishing Bros</h1>
+        <p>Tight lines, heavy bends, and chaotic Scottish angling adventures!</p>
+        <a href="http://www.youtube.com/@Scottish_fishing_bros" target="_blank" class="btn-youtube">Subscribe on YouTube</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- Who We Are Section -->
+        <section id="about">
+            <h2>Who We Are</h2>
+            <p>Welcome to the official home of the <strong>Scottish Fishing Bros</strong>! We are a group of passionate anglers dedicated to exploring the beautiful lochs, rivers, and coastal waters of Scotland. Whether we are chasing wild brown trout in remote hill lochs, spinning for Atlantic salmon, or sea fishing off the rugged coastlines, we bring you along for every single cast, laugh, and tangle.</p>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do">
+            <h2>What We Do</h2>
+            <p>Our channel focuses on real, unedited, and entertaining fishing content across Scotland. Here is what you can expect from our videos:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Loch & River Sessions</h3>
+                    <p>From fly fishing in Highland glens to bait fishing local waters, we target everything that swims in Scottish freshwaters.</p>
+                </div>
+                <div class="card">
+                    <h3>Sea Angling Vlogs</h3>
+                    <p>Catch us hitting the piers, beaches, and rocks targeting mackerel, pollock, cod, and whatever else decides to smash our lures.</p>
+                </div>
+                <div class="card">
+                    <h3>Tips, Tricks & Gear</h3>
+                    <p>We share what rigs work for us, budget gear reviews, and the best tactics to help you land more fish on your next trip.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links & Resources Section -->
+        <section id="links">
+            <h2>Quick Links</h2>
+            <p>Stay connected with us across the web:</p>
+            <ul class="links-list">
+                <li>👉 <a href="http://www.youtube.com/@Scottish_fishing_bros" target="_blank">Official YouTube Channel</a> — Watch our latest videos and shorts.</li>
+                <li>🎣 <a href="http://youtube.com" target="_blank">Latest Uploads</a> — Jump straight to our newest adventures.</li>
+                <li>👥 <a href="http://youtube.com" target="_blank">Community Tab</a> — Get channel updates and join the discussion.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 Scottish Fishing Bros. All Rights Reserved. Tight Lines!</p>
+    </footer>
+
+</body>
+</html>
