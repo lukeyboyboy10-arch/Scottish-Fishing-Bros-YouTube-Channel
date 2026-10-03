@@ -5,208 +5,303 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scottish Fishing Bros | Official Website</title>
     <style>
-        /* Reset and Base Styles */
+        /* Modern Reset and Google Fonts Integration */
+        @import url('https://googleapis.com');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
+            background-color: #0b111e; /* Deep midnight blue */
+            color: #e2e8f0;
+            line-height: 1.7;
         }
 
-        /* Variables for easy color changes */
         :root {
             --primary-blue: #005eb8; /* Scottish Saltire Blue */
-            --dark-blue: #003a70;
+            --electric-blue: #00d2ff;
+            --dark-card: #152033;
             --accent-gold: #ffb81c;
-            --light-bg: #eef3f7;
+            --youtube-red: #ff0000;
+            --youtube-hover: #cc0000;
         }
 
-        /* Header & Navigation */
+        /* Hero Header using your real Boat Pollock catch as the background */
         header {
-            background: linear-gradient(rgba(0, 58, 112, 0.85), rgba(0, 94, 184, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            position: relative;
+            background: linear-gradient(rgba(11, 17, 30, 0.75), rgba(11, 17, 30, 0.95)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 140px 20px;
+            border-bottom: 3px solid var(--primary-blue);
         }
 
         header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         header p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            margin-bottom: 35px;
             font-weight: 300;
+            color: #94a3b8;
         }
 
-        /* Call to Action Button */
+        /* Modern CTA Button styling */
         .btn-youtube {
-            display: inline-block;
-            background-color: #ff0000; /* YouTube Red */
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--youtube-red);
             color: white;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
         }
 
         .btn-youtube:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
+            background-color: var(--youtube-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 0, 0, 0.4);
         }
 
-        /* Main Content Container */
+        /* Central Layout Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
-        /* Section Layouts */
+        /* Structural Content Blocks */
         section {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: var(--dark-card);
+            padding: 45px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         h2 {
-            color: var(--dark-blue);
+            color: white;
             font-size: 2.2rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--primary-blue);
-            padding-bottom: 10px;
-            display: inline-block;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
         }
 
-        /* What We Do Grid */
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--electric-blue));
+            border-radius: 2px;
+        }
+
+        .about-layout {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text strong {
+            color: var(--electric-blue);
+        }
+
+        .about-featured-img {
+            width: 320px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Photo Grid & Content Blocks */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .card {
-            background-color: var(--light-bg);
+            background-color: rgba(11, 17, 30, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+            border-color: rgba(0, 94, 184, 0.4);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background-color: #0b111e;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Auto-correcting rotation for the sideways river photo container */
+        .rotate-fix {
+            transform: rotate(-90deg) scale(1.4);
+        }
+
+        .card:hover .card-img:not(.rotate-fix) {
+            transform: scale(1.08);
+        }
+        
+        .card:hover .rotate-fix {
+            transform: rotate(-90deg) scale(1.48);
+        }
+
+        .card-content {
             padding: 25px;
-            border-radius: 8px;
-            border-left: 5px solid var(--primary-blue);
         }
 
         .card h3 {
-            color: var(--dark-blue);
-            margin-bottom: 10px;
+            color: white;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
         }
 
-        /* Links Section */
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Modern Quick Links section */
         .links-list {
             list-style: none;
             margin-top: 20px;
         }
 
         .links-list li {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            background: rgba(11, 17, 30, 0.4);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.2s ease;
+        }
+
+        .links-list li:hover {
+            background: rgba(11, 17, 30, 0.8);
+            border-left-color: var(--electric-blue);
+            transform: translateX(5px);
         }
 
         .links-list a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-
-        .links-list a:hover {
-            color: var(--dark-blue);
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-blue);
             color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
         }
 
-        /* Responsive adjustments */
+        .links-list a span {
+            color: #64748b;
+            font-weight: 400;
+            font-size: 0.95rem;
+            margin-left: 5px;
+        }
+
+        /* Expanded Footer element */
+        footer {
+            background-color: #070b14;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer p strong {
+            color: #94a3b8;
+        }
+
+        /* Fluid layout breakpoints for mobile screens */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
+            header h1 { font-size: 2.8rem; }
             header p { font-size: 1.1rem; }
             section { padding: 25px; }
+            header { padding: 90px 20px; }
+            .about-layout { flex-direction: column; text-align: center; }
+            .about-featured-img { width: 100%; height: 360px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Hero Header with high-res overlay context -->
     <header>
         <h1>Scottish Fishing Bros</h1>
         <p>Tight lines, banter and chaotic Scottish angling adventures!</p>
-        <a href="http://www.youtube.com/@Scottish_fishing_bros" target="_blank" class="btn-youtube">Subscribe on YouTube</a>
+        <a href="https://youtube.com" target="_blank" class="btn-youtube">Subscribe on YouTube</a>
     </header>
 
     <div class="container">
         
-        <!-- Who We Are Section -->
+        <!-- Who We Are Section featuring your boat catch picture next to text -->
         <section id="about">
             <h2>Who We Are</h2>
-            <p>Welcome to the official home of the <strong>Scottish Fishing Bros</strong>! Luke and his co-partner Oscar are young passionate anglers dedicated to exploring the beautiful rivers, lochs and coastal waters of Scotland. They are frequently joined by guests such as Lukes father and others. Whether they are chasing wild brown trout in remote hill lochs, sea fishing off the rugged coastlines, they bring you along for every single cast, laugh, and tangle.</p>
-        </section>
-
-        <!-- What We Do Section -->
-        <section id="what-we-do">
-            <h2>What We Do</h2>
-            <p>Our channel focuses on real, funny, and entertaining fishing content across Scotland and the harsh reality of actually catching a fish in very unpredictable weather conditions. Here is what you can expect from our videos:</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>Loch & River Sessions</h3>
-                    <p>From fly fishing to mep fishing local waters, we target everything that swims.</p>
+            <div class="about-layout">
+                <div class="about-text">
+                    <p>Welcome to the official home of the <strong>Scottish Fishing Bros</strong>! Luke and his co-partner Oscar are young passionate anglers dedicated to exploring the beautiful rivers, lochs, and coastal waters of Scotland. They are frequently joined by guests such as Luke's father and others. Whether they are chasing wild brown trout in remote hill lochs or sea fishing off the rugged coastlines, they bring you along for every single cast, laugh, and tangle.</p>
                 </div>
-                <div class="card">
-                    <h3>Sea Angling Vlogs</h3>
-                    <p>Catch us hitting the piers, beaches, and rocks targeting mackerel, pollock, cod, and whatever else decides to smash our lures.</p>
-                </div>
-                <div class="card">
-                    <h3>Tips, Tricks & Gear</h3>
-                    <p>We share what tips that work for us, budget gear reviews, and the best tactics to help you land more fish on your next trip. So what are you waiting for! Go check us out and if you like our videos make sure to SUBSCRIBE!</p>
-                </div>
+                <img class="about-featured-img" src="image_Ol0GKg.png" alt="Oscar with a great Pollock catch on the boat">
             </div>
         </section>
 
-        <!-- Links & Resources Section -->
-        <section id="links">
-            <h2>Quick Links</h2>
-            <p>Stay connected with us across the web:</p>
-            <ul class="links-list">
-                <li>👉 <a href="http://www.youtube.com/@Scottish_fishing_bros" target="_blank">Official YouTube Channel</a> — Watch our latest videos and shorts.</li>
-                <li>🎣 <a href="http://youtube.com" target="_blank">Latest Uploads</a> — Jump straight to our newest adventures.</li>
-                <li>👥 <a href="http://youtube.com" target="_blank">Community Tab</a> — Get channel updates and join the discussion.</li>
-            </ul>
-        </section>
+        <!-- What We Do Section with your actual catch photos -->
+        <section id="what-we-do">
+            <h2>What We Do</h2>
+            <p style="color: #94a3b8;">Our channel focuses on real, funny, and entertaining fishing content across Scotland and the harsh reality of catching a fish in unpredictable weather conditions. Here is what you can expect from our videos:</p>
+            
+            <div class="grid">
+                <!-- Card 1: Loch & River Sessions using your river fishing photo -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img class="card-img rotate-fix" src="image_0ZBiEa.png" alt="Freshwater river fishing in Scotland">
+                    </div>
+                    <div class="card-content">
+                        <h3>Loch & River Sessions</h3>
+                        <p>From traditional fly fishing to casting spinner lures across local rivers and hill lochs, we target everything that swims in Scotland's beautiful freshwater settings.</p>
+                    </div>
+                </div>
 
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        
-    </footer>
-
-</body>
-</html>
+                <!-- Card 2: Sea Angling Vlogs using your hand-held Pollock catch -->
+                <div class="card">
+                    <div class="card-img-wrapper">
